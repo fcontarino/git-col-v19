@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Git Desarrollo Colaborativo</title>
 </head>
+
 <body>
     <header>
         <h1>Git</h1>
@@ -15,7 +17,9 @@
         <h2>Areas de GIT</h2>
         <article>
             <h3>Working Directory</h3>
-            <p>Es el area de trabajo, donde vamos a crear, editar, eliminar los diferentes archivos que formen parte de nuestro proyecto. Muy rara vez, estaremos utilizando la consola en esta instancia que basicamente estaria representada por la carpeta donde inicializamos el repositorio</p>
+            <p>Es el area de trabajo, donde vamos a crear, editar, eliminar los diferentes archivos que formen parte de
+                nuestro proyecto. Muy rara vez, estaremos utilizando la consola en esta instancia que basicamente
+                estaria representada por la carpeta donde inicializamos el repositorio</p>
             <ul class="commands">
                 <li><strong>dir || ls</strong> muestra el contenido del directorio actual</li>
                 <li><strong>mkdir &lt;name></strong> crea una carpeta</li>
@@ -26,12 +30,34 @@
         </article>
         <article>
             <h3>Stagin Area (INDEX)</h3>
-            <p>Es el area de control de cambios donde se realizan las capturas de codigo (snapshot) y basicamente donde indicamos a que archivos vamos a estar realizando seguimiento. Una vez agregados los cambios solamente debemos confirmarlos para agregarlos al repositorio.</p>
+            <p>Es el area de control de cambios donde se realizan las capturas de codigo (snapshot) y basicamente donde
+                indicamos a que archivos vamos a estar realizando seguimiento. Una vez agregados los cambios solamente
+                debemos confirmarlos para agregarlos al repositorio.</p>
+            <ul class="commands">
+                <li><strong>git status</strong> muestra el estado del archivo en relacion al INDEX
+                    <ul>
+                        <li><strong>untracked: </strong> no se esta haciendo seguimiento, irrecuperable en caso de
+                            perdida</li>
+                        <li><strong>staged: </strong> se realizo la captura del codigo, pero no se confirmo</li>
+                        <li><strong>commited: </strong> se confirmo la captura y se almacenaron los cambios en el
+                            historial.</li>
+                        <li><strong>modified: </strong> el archivo difiere con respecto a la ultima confirmacion</li>
+                    </ul>
+                </li>
+                <li><strong>git add &lt;file></strong> agrega los cambios del archivo al INDEX</li>
+                <li><strong>git diff</strong> muestra las diferencias entre el INDEX y el Working Directory</li>
+                <li><strong>git restore --staged &lt;file></strong> elimina la ultima captura realizada</li>
+                <li><strong>git rm --cached &lt;file></strong> quita el archivo del INDEX, no se hace seguimiento</li>
+            </ul>
+
         </article>
         <article>
             <h3>Repository</h3>
-            <p>Es el area donde se almacenan las confirmaciones de los cambios realizados en archivos de tipo BLOB (Binary Large Object File), se utilizan como puntos de referencia a los que podemos volver siempre y cuando indiquemos a git cual es el numero de HASH o posicion que queremos visualizar.</p>
+            <p>Es el area donde se almacenan las confirmaciones de los cambios realizados en archivos de tipo BLOB
+                (Binary Large Object File), se utilizan como puntos de referencia a los que podemos volver siempre y
+                cuando indiquemos a git cual es el numero de HASH o posicion que queremos visualizar.</p>
         </article>
     </section>
 </body>
+
 </html>
